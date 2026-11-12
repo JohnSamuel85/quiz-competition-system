@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - BACKEND_PORT=8000
+      - DATABASE_URL=postgresql://quiz_user:quiz_secret@db:5432/quiz_db
+      - SECRET_KEY=super-secret-jwt-key-for-premium-quiz-platform-2026-xyz-change-me
+      - NODE_ENV=production
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=quiz_user
+      - POSTGRES_PASSWORD=quiz_secret
+      - POSTGRES_DB=quiz_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quiz_user -d quiz_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

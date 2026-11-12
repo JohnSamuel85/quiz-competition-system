@@ -1,0 +1,758 @@
+{
+  "round_number": 2,
+  "title": "Championship Round 2: Prophetic Literature & Planetary Cosmologies",
+  "description": "50 high-difficulty competition questions: 25 advanced theological & biblical inquiries plus 25 elite general knowledge challenges.",
+  "questions": [
+    {
+      "question_order": 1,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In the Book of Daniel, which angel explains the vision of the ram and the goat in chapter 8?",
+      "options": {
+        "A": "Michael",
+        "B": "Gabriel",
+        "C": "Raphael",
+        "D": "Uriel"
+      },
+      "correct_answer": "B",
+      "explanation": "Daniel 8:16 records a human voice calling: 'Gabriel, make this man understand the vision.'",
+      "bible_reference": "Daniel 8:16"
+    },
+    {
+      "question_order": 2,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the priest of Midian whose daughter Zipporah became the wife of Moses?",
+      "options": {
+        "A": "Jethro (Reuel)",
+        "B": "Hobab",
+        "C": "Balaam",
+        "D": "Laban"
+      },
+      "correct_answer": "A",
+      "explanation": "Exodus 2:16-21 and 3:1 identify Jethro (also known as Reuel), priest of Midian, as Moses's father-in-law.",
+      "bible_reference": "Exodus 2:18-21, 3:1"
+    },
+    {
+      "question_order": 3,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In the Gospel of John, by what pool with five roofed colonnades did Jesus heal a man invalided for 38 years?",
+      "options": {
+        "A": "Siloam",
+        "B": "Bethesda",
+        "C": "Gihon",
+        "D": "En-rogel"
+      },
+      "correct_answer": "B",
+      "explanation": "John 5:2 states: 'Now there is in Jerusalem near the Sheep Gate a pool, in Aramaic called Bethesda, which has five roofed colonnades.'",
+      "bible_reference": "John 5:2-5"
+    },
+    {
+      "question_order": 4,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which king of Israel was famously rebuked by the prophet Elijah for seizing Naboth's vineyard?",
+      "options": {
+        "A": "Ahab",
+        "B": "Jeroboam",
+        "C": "Omri",
+        "D": "Jehu"
+      },
+      "correct_answer": "A",
+      "explanation": "1 Kings 21:17-19 records the word of the Lord coming to Elijah to confront King Ahab in the vineyard of Naboth.",
+      "bible_reference": "1 Kings 21:17-19"
+    },
+    {
+      "question_order": 5,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "According to Acts 18, what was the trade shared by Paul, Aquila, and Priscilla in Corinth?",
+      "options": {
+        "A": "Stone masonry",
+        "B": "Tentmaking",
+        "C": "Dye manufacturing",
+        "D": "Pottery"
+      },
+      "correct_answer": "B",
+      "explanation": "Acts 18:3 notes that Paul stayed and worked with Aquila and Priscilla because they were tentmakers by trade.",
+      "bible_reference": "Acts 18:3"
+    },
+    {
+      "question_order": 6,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Old Testament queen traveled from southern Arabia with camels bearing spices and gold to test Solomon with hard questions?",
+      "options": {
+        "A": "Queen of Sheba",
+        "B": "Queen Candace",
+        "C": "Queen Athaliah",
+        "D": "Queen Vashti"
+      },
+      "correct_answer": "A",
+      "explanation": "1 Kings 10:1-2 chronicles the Queen of Sheba arriving in Jerusalem to test King Solomon with riddles and hard questions.",
+      "bible_reference": "1 Kings 10:1-2"
+    },
+    {
+      "question_order": 7,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What was the name of the runaway slave on whose behalf Paul penned a personal letter to Philemon?",
+      "options": {
+        "A": "Titus",
+        "B": "Onesimus",
+        "C": "Epaphroditus",
+        "D": "Archippus"
+      },
+      "correct_answer": "B",
+      "explanation": "In Philemon 1:10, Paul appeals for his spiritual child Onesimus, whose name means 'useful'.",
+      "bible_reference": "Philemon 1:10-12"
+    },
+    {
+      "question_order": 8,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet was thrown into a muddy cistern belonging to Malchiah during the siege of Jerusalem?",
+      "options": {
+        "A": "Isaiah",
+        "B": "Jeremiah",
+        "C": "Ezekiel",
+        "D": "Micah"
+      },
+      "correct_answer": "B",
+      "explanation": "Jeremiah 38:6 recounts Jeremiah being cast into the dungeon of Malchiah, sinking into the mire until rescued by Ebed-melech.",
+      "bible_reference": "Jeremiah 38:6"
+    },
+    {
+      "question_order": 9,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In Genesis 14, to whom did Abram pay a tenth of all the spoils after rescuing Lot?",
+      "options": {
+        "A": "Melchizedek",
+        "B": "Abimelech",
+        "C": "Ephron the Hittite",
+        "D": "Mamre the Amorite"
+      },
+      "correct_answer": "A",
+      "explanation": "Genesis 14:18-20 records Melchizedek king of Salem bringing out bread and wine, and Abram giving him a tenth of everything.",
+      "bible_reference": "Genesis 14:18-20"
+    },
+    {
+      "question_order": 10,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Roman officer was stationed in Caesarea and described as the first Gentile convert following Peter's vision?",
+      "options": {
+        "A": "Julius",
+        "B": "Cornelius",
+        "C": "Claudius Lysias",
+        "D": "Sergius Paulus"
+      },
+      "correct_answer": "B",
+      "explanation": "Acts 10:1-2 introduces Cornelius, a centurion of the Italian Cohort, a devout and God-fearing man.",
+      "bible_reference": "Acts 10:1-2"
+    },
+    {
+      "question_order": 11,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What type of tree did the tax collector Zacchaeus climb in Jericho in order to see Jesus?",
+      "options": {
+        "A": "Sycamore-fig tree",
+        "B": "Pomegranate tree",
+        "C": "Date palm",
+        "D": "Lebanese Cedar"
+      },
+      "correct_answer": "A",
+      "explanation": "Luke 19:4 tells how Zacchaeus ran ahead and climbed a sycamore-fig tree because he was short in stature.",
+      "bible_reference": "Luke 19:4"
+    },
+    {
+      "question_order": 12,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In Judges 4, which woman slew the Canaanite general Sisera with a tent peg and hammer while he slept?",
+      "options": {
+        "A": "Deborah",
+        "B": "Jael",
+        "C": "Manoah's wife",
+        "D": "Abigail"
+      },
+      "correct_answer": "B",
+      "explanation": "Judges 4:21 details Jael, wife of Heber the Kenite, taking a tent peg and hammer and driving it through Sisera's temple.",
+      "bible_reference": "Judges 4:21"
+    },
+    {
+      "question_order": 13,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What town was the birthplace of both King David and Jesus Christ?",
+      "options": {
+        "A": "Nazareth",
+        "B": "Bethlehem",
+        "C": "Hebron",
+        "D": "Capernaum"
+      },
+      "correct_answer": "B",
+      "explanation": "Micah 5:2 and Luke 2:4 identify Bethlehem Ephrathah as the ancestral city of David and the birthplace of the Messiah.",
+      "bible_reference": "Micah 5:2, Luke 2:4"
+    },
+    {
+      "question_order": 14,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was struck down dead at Perez-uzzah after reaching out his hand to steady the Ark of God?",
+      "options": {
+        "A": "Ahio",
+        "B": "Uzzah",
+        "C": "Obed-edom",
+        "D": "Eleazar"
+      },
+      "correct_answer": "B",
+      "explanation": "2 Samuel 6:6-7 records Uzzah putting forth his hand to the ark when the oxen stumbled, and the anger of the Lord burning against him.",
+      "bible_reference": "2 Samuel 6:6-7"
+    },
+    {
+      "question_order": 15,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet saw a valley full of dry bones that rattled together and became filled with breath?",
+      "options": {
+        "A": "Isaiah",
+        "B": "Ezekiel",
+        "C": "Daniel",
+        "D": "Zechariah"
+      },
+      "correct_answer": "B",
+      "explanation": "Ezekiel 37:1-10 details Ezekiel's famous vision of the valley of dry bones revived into a vast army.",
+      "bible_reference": "Ezekiel 37:1-10"
+    },
+    {
+      "question_order": 16,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "On which island was the Apostle John exiled when he received the visions recorded in Revelation?",
+      "options": {
+        "A": "Cyprus",
+        "B": "Patmos",
+        "C": "Crete",
+        "D": "Malta"
+      },
+      "correct_answer": "B",
+      "explanation": "Revelation 1:9 states: 'I, John... was on the island called Patmos on account of the word of God and the testimony of Jesus.'",
+      "bible_reference": "Revelation 1:9"
+    },
+    {
+      "question_order": 17,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which judge of Israel made a rash vow before battle against the Ammonites that affected his only daughter?",
+      "options": {
+        "A": "Gideon",
+        "B": "Jephthah",
+        "C": "Samson",
+        "D": "Abdon"
+      },
+      "correct_answer": "B",
+      "explanation": "Judges 11:30-35 recounts Jephthah's solemn vow to sacrifice whatever first came out of his house to meet him.",
+      "bible_reference": "Judges 11:30-35"
+    },
+    {
+      "question_order": 18,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What was the name of the sorcerer on Cyprus who was struck blind by Paul in Acts 13?",
+      "options": {
+        "A": "Simon Magus",
+        "B": "Elymas (Bar-Jesus)",
+        "C": "Theudas",
+        "D": "Hermas"
+      },
+      "correct_answer": "B",
+      "explanation": "Acts 13:6-11 records Paul rebuking the magician Elymas (Bar-Jesus), causing a mist and darkness to fall upon him.",
+      "bible_reference": "Acts 13:6-11"
+    },
+    {
+      "question_order": 19,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which king of Israel instituted the worship of two golden calves at Bethel and Dan to prevent pilgrims from going to Jerusalem?",
+      "options": {
+        "A": "Rehoboam",
+        "B": "Jeroboam I",
+        "C": "Baasha",
+        "D": "Nadab"
+      },
+      "correct_answer": "B",
+      "explanation": "1 Kings 12:28-29 recounts Jeroboam making two golden calves and setting one in Bethel and the other in Dan.",
+      "bible_reference": "1 Kings 12:28-29"
+    },
+    {
+      "question_order": 20,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the female merchant of purple cloth from Thyatira whose heart was opened by God in Philippi?",
+      "options": {
+        "A": "Phoebe",
+        "B": "Lydia",
+        "C": "Chloe",
+        "D": "Euodia"
+      },
+      "correct_answer": "B",
+      "explanation": "Acts 16:14 records Lydia of Thyatira listening to Paul and being baptized alongside her entire household.",
+      "bible_reference": "Acts 16:14-15"
+    },
+    {
+      "question_order": 21,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Psalm begins with the famous words: 'The Lord is my light and my salvation; whom shall I fear?'",
+      "options": {
+        "A": "Psalm 23",
+        "B": "Psalm 27",
+        "C": "Psalm 91",
+        "D": "Psalm 121"
+      },
+      "correct_answer": "B",
+      "explanation": "Psalm 27:1 opens with: 'The Lord is my light and my salvation; whom shall I fear? The Lord is the stronghold of my life.'",
+      "bible_reference": "Psalm 27:1"
+    },
+    {
+      "question_order": 22,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In Matthew 27, what was the field bought with the thirty silver coins returned by Judas called?",
+      "options": {
+        "A": "Akeldama (Field of Blood)",
+        "B": "Gethsemane",
+        "C": "Golgotha",
+        "D": "Valley of Hinnom"
+      },
+      "correct_answer": "A",
+      "explanation": "Matthew 27:7-8 and Acts 1:19 identify the potter's field as Akeldama, that is, the Field of Blood.",
+      "bible_reference": "Matthew 27:7-8, Acts 1:19"
+    },
+    {
+      "question_order": 23,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet confronted King David with the parable of the rich man who took the poor man's single ewe lamb?",
+      "options": {
+        "A": "Samuel",
+        "B": "Nathan",
+        "C": "Gad",
+        "D": "Ahijah"
+      },
+      "correct_answer": "B",
+      "explanation": "2 Samuel 12:1-7 details the prophet Nathan telling David the parable and concluding with 'You are the man!'",
+      "bible_reference": "2 Samuel 12:1-7"
+    },
+    {
+      "question_order": 24,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In 2 Kings 2, how was the prophet Elijah taken up into heaven?",
+      "options": {
+        "A": "In a pillar of smoke",
+        "B": "In a whirlwind with chariots of fire",
+        "C": "On the wings of an eagle",
+        "D": "Within a thick cloud"
+      },
+      "correct_answer": "B",
+      "explanation": "2 Kings 2:11 states: 'Behold, chariots of fire and horses of fire separated the two of them. And Elijah went up by a whirlwind into heaven.'",
+      "bible_reference": "2 Kings 2:11"
+    },
+    {
+      "question_order": 25,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the Hebrew name of the Feast of Booths (Tabernacles) celebrated in the seventh month?",
+      "options": {
+        "A": "Pesach",
+        "B": "Sukkot",
+        "C": "Shavuot",
+        "D": "Purim"
+      },
+      "correct_answer": "B",
+      "explanation": "Leviticus 23:34 establishes the Feast of Booths (Sukkot), beginning on the 15th day of the seventh month Tishrei.",
+      "bible_reference": "Leviticus 23:34"
+    },
+
+    {
+      "question_order": 26,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the only planet in the Solar System whose axial tilt exceeds 90 degrees, causing it to rotate nearly on its side?",
+      "options": {
+        "A": "Saturn",
+        "B": "Uranus",
+        "C": "Neptune",
+        "D": "Venus"
+      },
+      "correct_answer": "B",
+      "explanation": "Uranus has an extreme axial tilt of approximately 97.8 degrees, meaning its rotational axis points almost directly at the Sun.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 27,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which treaty ended the War of the Spanish Succession in 1713, reshaping balance-of-power diplomacy in Europe?",
+      "options": {
+        "A": "Treaty of Utrecht",
+        "B": "Treaty of Aix-la-Chapelle",
+        "C": "Treaty of Paris",
+        "D": "Treaty of Tordesillas"
+      },
+      "correct_answer": "A",
+      "explanation": "The Peace of Utrecht (1713) ended the War of the Spanish Succession, confirming Philip V as king while prohibiting uniting French and Spanish crowns.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 28,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What fundamental particle is the mediator or gauge boson of the electromagnetic force in the Standard Model?",
+      "options": {
+        "A": "Gluon",
+        "B": "Photon",
+        "C": "Z Boson",
+        "D": "Graviton"
+      },
+      "correct_answer": "B",
+      "explanation": "In quantum electrodynamics, the massless photon is the gauge boson responsible for carrying the electromagnetic interaction.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 29,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which sea is considered the saltiest open-water marginal sea in the world due to extreme evaporation and lack of river discharge?",
+      "options": {
+        "A": "Baltic Sea",
+        "B": "Red Sea",
+        "C": "Black Sea",
+        "D": "Coral Sea"
+      },
+      "correct_answer": "B",
+      "explanation": "The Red Sea reaches surface salinities of 40 to 41 practical salinity units (PSU), the highest among open marginal marine bodies.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 30,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who synthesized the first synthetic organic dye, mauveine (aniline purple), in 1856 while attempting to produce quinine?",
+      "options": {
+        "A": "William Henry Perkin",
+        "B": "Justus von Liebig",
+        "C": "Friedrich Wohler",
+        "D": "August Kekule"
+      },
+      "correct_answer": "A",
+      "explanation": "At age 18, English chemist William Henry Perkin accidentally discovered mauveine, founding the synthetic dye and petrochemical industry.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 31,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In vertebrate anatomy, what is the largest and longest nerve in the human body?",
+      "options": {
+        "A": "Vagus nerve",
+        "B": "Sciatic nerve",
+        "C": "Femoral nerve",
+        "D": "Phrenic nerve"
+      },
+      "correct_answer": "B",
+      "explanation": "The sciatic nerve arises from spinal nerves L4 through S3 and extends down through the pelvis into each lower limb.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 32,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which ancient philosopher formulated the Allegory of the Cave in Book VII of 'The Republic'?",
+      "options": {
+        "A": "Aristotle",
+        "B": "Plato",
+        "C": "Socrates",
+        "D": "Pythagoras"
+      },
+      "correct_answer": "B",
+      "explanation": "Plato presented the Allegory of the Cave to explore the nature of philosophical enlightenment and the world of Forms versus sensory shadows.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 33,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the only element on the periodic table that sublimes under standard atmospheric pressure rather than melting into a liquid?",
+      "options": {
+        "A": "Carbon",
+        "B": "Iodine",
+        "C": "Arsenic",
+        "D": "Phosphorus"
+      },
+      "correct_answer": "A",
+      "explanation": "At standard atmospheric pressure (1 atm), carbon has no liquid phase and sublimes directly to gas at approximately 3915 K (3642 °C).",
+      "bible_reference": null
+    },
+    {
+      "question_order": 34,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which African nation was never colonized during the Scramble for Africa, famously defeating the Italian invasion at Adwa in 1896?",
+      "options": {
+        "A": "Liberia",
+        "B": "Ethiopia",
+        "C": "Morocco",
+        "D": "Sudan"
+      },
+      "correct_answer": "B",
+      "explanation": "Under Emperor Menelik II, the Ethiopian Empire decisively crushed the invading Italian army at the Battle of Adwa on March 1, 1896.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 35,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What mathematical constant is defined as the limit of (1 + 1/n)^n as n approaches infinity, approximately 2.71828?",
+      "options": {
+        "A": "Euler's number (e)",
+        "B": "Golden ratio (phi)",
+        "C": "Pi",
+        "D": "Feigenbaum constant"
+      },
+      "correct_answer": "A",
+      "explanation": "The mathematical constant e, discovered by Jacob Bernoulli in connection with compound interest, is the base of the natural logarithm.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 36,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What architectural style characterized by pointed arches, ribbed vaults, and flying buttresses flourished in medieval Europe from the 12th century?",
+      "options": {
+        "A": "Romanesque",
+        "B": "Gothic",
+        "C": "Baroque",
+        "D": "Byzantine"
+      },
+      "correct_answer": "B",
+      "explanation": "Gothic architecture originated in 12th-century France (Abbey Church of Saint-Denis) enabling monumental height and stained-glass lighting.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 37,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Danish astronomer lost part of his nose in a duel and compiled planetary observation data without a telescope that Kepler later used?",
+      "options": {
+        "A": "Nicolaus Copernicus",
+        "B": "Tycho Brahe",
+        "C": "Christiaan Huygens",
+        "D": "Ole Romer"
+      },
+      "correct_answer": "B",
+      "explanation": "Tycho Brahe built Uraniborg and meticulously recorded planetary motions, which allowed his assistant Johannes Kepler to derive the laws of planetary motion.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 38,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What enzyme found in tears, saliva, and human mucus hydrolyzes peptidoglycan in bacterial cell walls?",
+      "options": {
+        "A": "Amylase",
+        "B": "Lysozyme",
+        "C": "Pepsin",
+        "D": "Catalase"
+      },
+      "correct_answer": "B",
+      "explanation": "Alexander Fleming discovered lysozyme in 1921; it acts as an innate immune defense by breaking beta-(1,4)-glycosidic bonds in bacterial walls.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 39,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which South American lake, situated between Bolivia and Peru at 3,812 meters elevation, is the highest navigable commercial lake in the world?",
+      "options": {
+        "A": "Lake Maracaibo",
+        "B": "Lake Titicaca",
+        "C": "Lake Poopo",
+        "D": "Lake Nahuel Huapi"
+      },
+      "correct_answer": "B",
+      "explanation": "Lake Titicaca in the high Andes plateau is by volume of water and surface area the largest lake in South America and the highest navigable body.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 40,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What type of chemical bond involves the equal sharing of electron pairs between two atoms of identical electronegativity?",
+      "options": {
+        "A": "Ionic bond",
+        "B": "Nonpolar covalent bond",
+        "C": "Hydrogen bond",
+        "D": "Coordinate covalent bond"
+      },
+      "correct_answer": "B",
+      "explanation": "In nonpolar covalent bonds (such as in diatomic H2 or O2), bonding electrons are shared symmetrically with no net dipole moment.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 41,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the primary architect of the Palace of Versailles expansion under King Louis XIV?",
+      "options": {
+        "A": "Louis Le Vau and Jules Hardouin-Mansart",
+        "B": "Christopher Wren",
+        "C": "Gian Lorenzo Bernini",
+        "D": "Inigo Jones"
+      },
+      "correct_answer": "A",
+      "explanation": "Louis Le Vau designed the initial monumental envelope, and Jules Hardouin-Mansart later designed the Hall of Mirrors and grand wings of Versailles.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 42,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which constitutional amendment abolished slavery throughout the entire United States in December 1865?",
+      "options": {
+        "A": "12th Amendment",
+        "B": "13th Amendment",
+        "C": "14th Amendment",
+        "D": "15th Amendment"
+      },
+      "correct_answer": "B",
+      "explanation": "The Thirteenth Amendment to the United States Constitution officially prohibited slavery and involuntary servitude except as punishment for a crime.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 43,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the study of inscriptions and ancient epigraphs engraved on stone, metal, or durable materials called?",
+      "options": {
+        "A": "Numismatics",
+        "B": "Epigraphy",
+        "C": "Paleography",
+        "D": "Sigillography"
+      },
+      "correct_answer": "B",
+      "explanation": "Epigraphy is the primary historical science concerned with deciphering, classifying, and interpreting inscriptions carved on enduring media.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 44,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "In statistical mechanics, whose constant (k_B) relates the average kinetic energy of particles in a gas with its thermodynamic temperature?",
+      "options": {
+        "A": "Avogadro",
+        "B": "Boltzmann",
+        "C": "Coulomb",
+        "D": "Fermi"
+      },
+      "correct_answer": "B",
+      "explanation": "Ludwig Boltzmann formulated the connection between macroscopic entropy and microstates: S = k_B * ln(W).",
+      "bible_reference": null
+    },
+    {
+      "question_order": 45,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which island archipelago located off the tip of South America is divided between Chile and Argentina?",
+      "options": {
+        "A": "Galapagos Islands",
+        "B": "Tierra del Fuego",
+        "C": "Falkland Islands",
+        "D": "South Georgia"
+      },
+      "correct_answer": "B",
+      "explanation": "Tierra del Fuego ('Land of Fire') is an archipelago separated from the South American mainland by the Strait of Magellan.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 46,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the primary protein component of human hair, fingernails, and the outer stratum corneum of skin?",
+      "options": {
+        "A": "Collagen",
+        "B": "Keratin",
+        "C": "Elastin",
+        "D": "Myosin"
+      },
+      "correct_answer": "B",
+      "explanation": "Alpha-keratin is a fibrous structural protein rich in cysteine amino acids whose disulfide bridges confer high mechanical stability.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 47,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Russian chemist arranged the known chemical elements in order of increasing atomic mass in 1869, predicting undiscovered elements?",
+      "options": {
+        "A": "Dmitri Mendeleev",
+        "B": "Mikhail Lomonosov",
+        "C": "Alexander Butlerov",
+        "D": "Nikolay Semenov"
+      },
+      "correct_answer": "A",
+      "explanation": "Dmitri Mendeleev formulated the Periodic Law and correctly predicted the properties of then-unknown elements like gallium and germanium.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 48,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the capital city of New Zealand, known as the southernmost sovereign capital city in the world?",
+      "options": {
+        "A": "Auckland",
+        "B": "Wellington",
+        "C": "Christchurch",
+        "D": "Dunedin"
+      },
+      "correct_answer": "B",
+      "explanation": "Wellington, situated on the southwestern tip of the North Island along Cook Strait, has been New Zealand's capital since 1865.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 49,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who directed the 1968 landmark epic science fiction film '2001: A Space Odyssey'?",
+      "options": {
+        "A": "Ridley Scott",
+        "B": "Stanley Kubrick",
+        "C": "Andrei Tarkovsky",
+        "D": "George Lucas"
+      },
+      "correct_answer": "B",
+      "explanation": "Stanley Kubrick produced and directed '2001: A Space Odyssey', co-writing the screenplay with science fiction author Arthur C. Clarke.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 50,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What physical quantity does the area underneath a velocity-versus-time graph represent in one-dimensional kinematics?",
+      "options": {
+        "A": "Acceleration",
+        "B": "Displacement",
+        "C": "Jerk",
+        "D": "Momentum"
+      },
+      "correct_answer": "B",
+      "explanation": "Because velocity is the time derivative of position (v = dx/dt), the definite integral of velocity with respect to time yields the displacement.",
+      "bible_reference": null
+    }
+  ]
+}

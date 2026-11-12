@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: aethelgard-quiz-platform
+    runtime: python
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: python run_production.py
+    healthCheckPath: /api/health
+    plan: starter
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: NODE_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aethelgard-postgres
+          property: connectionString
+
+databases:
+  - name: aethelgard-postgres
+    databaseName: aethelgard_quiz
+    user: aethelgard_user
+    plan: starter
