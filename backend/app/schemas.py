@@ -97,6 +97,10 @@ class SubmitAnswerResponse(BaseModel):
     question_id: int
     saved: bool
     is_last_question: bool
+    correct_answer: Optional[str] = None
+    is_correct: Optional[bool] = None
+    explanation: Optional[str] = None
+    bible_reference: Optional[str] = None
 
 
 class FinishAttemptRequest(BaseModel):

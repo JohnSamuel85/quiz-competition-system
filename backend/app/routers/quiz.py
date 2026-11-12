@@ -142,7 +142,11 @@ def submit_question_answer(
         success=True,
         question_id=question.id,
         saved=True,
-        is_last_question=(answered_count >= total_questions)
+        is_last_question=(answered_count >= total_questions),
+        correct_answer=question.correct_answer,
+        is_correct=is_correct,
+        explanation=question.explanation,
+        bible_reference=question.bible_reference
     )
 
 

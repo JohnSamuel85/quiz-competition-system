@@ -13,9 +13,18 @@ import {
   BookOpenIcon,
   BrainIcon,
   ArrowRightIcon,
-  SparklesIcon,
+  CheckCircleIcon,
+  XCircleIcon,
   AlertCircleIcon,
 } from "../../../components/Icons";
+
+interface RevealResult {
+  correct_answer: string;
+  is_correct: boolean;
+  explanation: string;
+  bible_reference?: string | null;
+  is_last: boolean;
+}
 
 export default function QuizArenaPage() {
   const params = useParams();
@@ -28,17 +37,17 @@ export default function QuizArenaPage() {
   const [initError, setInitError] = useState<string | null>(null);
 
   const [attemptId, setAttemptId] = useState<number | null>(null);
-  const [roundTitle, setRoundTitle] = useState<string>("");
   const [questions, setQuestions] = useState<QuestionSanitized[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // Question state
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState<boolean>(false);
+  const [revealResult, setRevealResult] = useState<RevealResult | null>(null);
 
   // Voice + Timer Synchronization States
-  // phase: "SPEAKING" | "COUNTDOWN" | "LOCKED" | "EXPIRED"
-  const [phase, setPhase] = useState<"SPEAKING" | "COUNTDOWN" | "LOCKED" | "EXPIRED">("SPEAKING");
+  // phase: "SPEAKING" | "COUNTDOWN" | "LOCKED" | "REVEALED" | "EXPIRED"
+  const [phase, setPhase] = useState<"SPEAKING" | "COUNTDOWN" | "LOCKED" | "REVEALED" | "EXPIRED">("SPEAKING");
   const [timeLeft, setTimeLeft] = useState<number>(20);
   const [isMuted, setIsMuted] = useState<boolean>(false);
 
@@ -65,7 +74,6 @@ export default function QuizArenaPage() {
       fetchWithAuth(`/api/quiz/rounds/${roundId}/start`, { method: "POST" })
         .then((data: StartAttemptResponse) => {
           setAttemptId(data.attempt_id);
-          setRoundTitle(data.round_title);
           setQuestions(data.questions);
           setLoading(false);
         })
@@ -106,6 +114,7 @@ export default function QuizArenaPage() {
 
     const currentQ = questions[currentIndex];
     setSelectedOption(null);
+    setRevealResult(null);
     clearCountdown();
 
     if (isMuted) {
@@ -147,7 +156,7 @@ export default function QuizArenaPage() {
     await commitAnswer(null, 20.0);
   };
 
-  // Submit Answer to Backend
+  // Submit Answer to Backend & Immediately Reveal Correct Answer
   const commitAnswer = async (option: string | null, elapsedSeconds?: number) => {
     if (!attemptId || submitting) return;
     setSubmitting(true);
@@ -170,18 +179,19 @@ export default function QuizArenaPage() {
         }),
       });
 
-      // Check if last question
-      if (currentIndex + 1 >= questions.length || resp.is_last_question) {
-        // Finish quiz attempt and redirect to scorecard
-        await fetchWithAuth(`/api/quiz/attempts/${attemptId}/finish`, { method: "POST" });
-        router.push(`/scorecard/${attemptId}`);
-      } else {
-        setCurrentIndex((prev) => prev + 1);
-        setSubmitting(false);
-      }
+      // Immediately show which answer is correct
+      setRevealResult({
+        correct_answer: resp.correct_answer || "",
+        is_correct: Boolean(resp.is_correct),
+        explanation: resp.explanation || "",
+        bible_reference: resp.bible_reference,
+        is_last: currentIndex + 1 >= questions.length || resp.is_last_question,
+      });
+      setPhase("REVEALED");
+      setSubmitting(false);
     } catch (err: any) {
       console.error("Submission failed:", err);
-      // If already answered or error, still advance
+      // Fallback advance if already submitted
       if (currentIndex + 1 < questions.length) {
         setCurrentIndex((prev) => prev + 1);
       } else {
@@ -191,11 +201,24 @@ export default function QuizArenaPage() {
     }
   };
 
-  // Manual submission by user clicking Lock In
+  // Manual submission by user clicking Confirm & Proceed
   const handleConfirmAnswer = () => {
-    if (!selectedOption) return;
+    if (!selectedOption || phase === "REVEALED") return;
     setPhase("LOCKED");
     commitAnswer(selectedOption);
+  };
+
+  // Next Question click after answer is revealed
+  const handleProceedToNext = async () => {
+    if (revealResult?.is_last) {
+      setSubmitting(true);
+      await fetchWithAuth(`/api/quiz/attempts/${attemptId}/finish`, { method: "POST" });
+      router.push(`/scorecard/${attemptId}`);
+    } else {
+      setRevealResult(null);
+      setSelectedOption(null);
+      setCurrentIndex((prev) => prev + 1);
+    }
   };
 
   // Skip Speech Narration & immediately start countdown
@@ -226,10 +249,19 @@ export default function QuizArenaPage() {
     });
   };
 
-  // Keyboard shortcut listener (A, B, C, D or 1, 2, 3, 4)
+  // Keyboard shortcut listener (A, B, C, D or 1, 2, 3, 4, Enter)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (submitting || phase === "LOCKED") return;
+      if (submitting) return;
+
+      if (phase === "REVEALED") {
+        if (e.key === "Enter" || e.key === " " || e.key === "ArrowRight") {
+          e.preventDefault();
+          handleProceedToNext();
+        }
+        return;
+      }
+
       const key = e.key.toUpperCase();
       if (["A", "1"].includes(key)) setSelectedOption("A");
       if (["B", "2"].includes(key)) setSelectedOption("B");
@@ -241,7 +273,7 @@ export default function QuizArenaPage() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedOption, submitting, phase]);
+  }, [selectedOption, submitting, phase, revealResult]);
 
   if (loading) {
     return (
@@ -309,8 +341,9 @@ export default function QuizArenaPage() {
           <div className="flex items-center gap-2">
             <button
               onClick={handleReplayAudio}
+              disabled={phase === "REVEALED"}
               title="Replay Voice (Timer continues)"
-              className="p-2 rounded-lg bg-[#141828] hover:bg-[#1e253e] border border-[#232b45] text-gray-300 hover:text-amber-400 text-xs flex items-center gap-1.5 transition-colors"
+              className="p-2 rounded-lg bg-[#141828] hover:bg-[#1e253e] border border-[#232b45] text-gray-300 hover:text-amber-400 text-xs flex items-center gap-1.5 transition-colors disabled:opacity-40"
             >
               <RotateCcwIcon size={15} />
               <span className="hidden sm:inline">Replay Audio</span>
@@ -341,7 +374,31 @@ export default function QuizArenaPage() {
 
       {/* Voice & Timer Synchronization Banner */}
       <div className="mb-6">
-        {phase === "SPEAKING" ? (
+        {phase === "REVEALED" ? (
+          <div
+            className={`p-4 rounded-2xl border flex items-center justify-between gap-3 ${
+              revealResult?.is_correct
+                ? "bg-emerald-500/15 border-emerald-500/40 text-emerald-200"
+                : "bg-rose-500/15 border-rose-500/40 text-rose-200"
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              {revealResult?.is_correct ? (
+                <CheckCircleIcon size={20} className="text-emerald-400 shrink-0" />
+              ) : (
+                <XCircleIcon size={20} className="text-rose-400 shrink-0" />
+              )}
+              <span className="text-xs sm:text-sm font-bold">
+                {revealResult?.is_correct
+                  ? "Correct Answer Locked In! (+10 Pts)"
+                  : `Incorrect — Correct Answer is Option ${revealResult?.correct_answer}`}
+              </span>
+            </div>
+            <span className="text-[11px] font-mono font-semibold px-2.5 py-1 rounded-full bg-black/30 border border-white/10">
+              Verified
+            </span>
+          </div>
+        ) : phase === "SPEAKING" ? (
           <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between gap-3 text-amber-300">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1">
@@ -406,8 +463,8 @@ export default function QuizArenaPage() {
         </h2>
       </div>
 
-      {/* Four Option Cards (A, B, C, D) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      {/* Four Option Cards (A, B, C, D) with Immediate Correct Answer Feedback */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         {[
           { key: "A", label: currentQ.option_a },
           { key: "B", label: currentQ.option_b },
@@ -415,71 +472,132 @@ export default function QuizArenaPage() {
           { key: "D", label: currentQ.option_d },
         ].map((opt) => {
           const isSelected = selectedOption === opt.key;
+          const isRevealed = phase === "REVEALED" && revealResult !== null;
+          const isCorrect = isRevealed && opt.key === revealResult.correct_answer;
+          const isWrongSelection = isRevealed && isSelected && !revealResult.is_correct;
+          const isDimmed = isRevealed && !isCorrect && !isSelected;
+
           return (
             <button
               key={opt.key}
               type="button"
-              disabled={submitting || phase === "LOCKED"}
+              disabled={submitting || phase === "LOCKED" || isRevealed}
               onClick={() => setSelectedOption(opt.key)}
-              className={`p-5 rounded-2xl text-left border transition-all flex items-start gap-4 ${
-                isSelected
+              className={`p-5 rounded-2xl text-left border transition-all flex items-start justify-between gap-4 ${
+                isCorrect
+                  ? "bg-emerald-500/20 border-emerald-400 text-emerald-100 shadow-lg shadow-emerald-500/20 ring-1 ring-emerald-400 scale-[1.01]"
+                  : isWrongSelection
+                  ? "bg-rose-500/20 border-rose-400 text-rose-100 shadow-lg shadow-rose-500/20 ring-1 ring-rose-400"
+                  : isDimmed
+                  ? "opacity-35 bg-[#0b0e18] border-[#181f33] text-gray-500"
+                  : isSelected
                   ? "bg-amber-500/15 border-amber-400 shadow-lg shadow-amber-500/15 scale-[1.01]"
                   : "bg-[#111422] border-[#20273d] hover:border-[#38456c] hover:bg-[#161a2c]"
-              } disabled:cursor-not-allowed`}
+              } disabled:cursor-default`}
             >
-              <span
-                className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${
-                  isSelected
-                    ? "bg-amber-500 text-black"
-                    : "bg-[#181d30] text-gray-300 border border-[#2b3552]"
-                }`}
-              >
-                {opt.key}
-              </span>
-              <div className="flex-1 pt-0.5">
+              <div className="flex items-start gap-4 flex-1">
                 <span
-                  className={`text-sm sm:text-base font-medium leading-relaxed ${
-                    isSelected ? "text-amber-100 font-semibold" : "text-gray-200"
+                  className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${
+                    isCorrect
+                      ? "bg-emerald-500 text-black font-extrabold"
+                      : isWrongSelection
+                      ? "bg-rose-500 text-white font-extrabold"
+                      : isSelected
+                      ? "bg-amber-500 text-black"
+                      : "bg-[#181d30] text-gray-300 border border-[#2b3552]"
                   }`}
                 >
-                  {opt.label}
+                  {opt.key}
                 </span>
+                <div className="flex-1 pt-0.5">
+                  <span
+                    className={`text-sm sm:text-base font-medium leading-relaxed ${
+                      isCorrect
+                        ? "text-emerald-100 font-bold"
+                        : isWrongSelection
+                        ? "text-rose-100 font-semibold"
+                        : isSelected
+                        ? "text-amber-100 font-semibold"
+                        : "text-gray-200"
+                    }`}
+                  >
+                    {opt.label}
+                  </span>
+                </div>
               </div>
+
+              {/* Badges for revealed state */}
+              {isCorrect && (
+                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30 shrink-0">
+                  <CheckCircleIcon size={13} /> Correct
+                </span>
+              )}
+              {isWrongSelection && (
+                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-rose-400 uppercase tracking-wider bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/30 shrink-0">
+                  <XCircleIcon size={13} /> Your Choice
+                </span>
+              )}
             </button>
           );
         })}
       </div>
 
+      {/* Immediate Scholarly Explanation Box (Visible Right After Confirm & Proceed) */}
+      {phase === "REVEALED" && revealResult && (
+        <div className="p-5 rounded-2xl glass-card border border-amber-500/30 shadow-xl mb-6 animate-fadeIn">
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">
+              Scholarly Explanation & Insight
+            </span>
+            {revealResult.bible_reference && (
+              <span className="text-xs font-serif italic text-amber-300 bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/30">
+                Scripture: {revealResult.bible_reference}
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-gray-200 leading-relaxed">
+            {revealResult.explanation}
+          </p>
+        </div>
+      )}
+
       {/* Bottom Action Footer */}
       <div className="flex items-center justify-between gap-4 pt-4 border-t border-[#1a2030]">
         <div className="text-xs text-gray-400">
-          <span className="hidden sm:inline">Shortcut: Press </span>
-          <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">
-            A
-          </kbd>
-          ,{" "}
-          <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">
-            B
-          </kbd>
-          ,{" "}
-          <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">
-            C
-          </kbd>
-          ,{" "}
-          <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">
-            D
-          </kbd>
+          {phase === "REVEALED" ? (
+            <span>Press <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-200 font-mono">Enter</kbd> or <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-200 font-mono">Space</kbd> to proceed</span>
+          ) : (
+            <>
+              <span className="hidden sm:inline">Shortcut: Press </span>
+              <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">A</kbd>,{" "}
+              <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">B</kbd>,{" "}
+              <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">C</kbd>,{" "}
+              <kbd className="px-1.5 py-0.5 rounded bg-[#181d30] border border-[#27304d] text-[11px] text-gray-300">D</kbd>
+            </>
+          )}
         </div>
 
-        <button
-          type="button"
-          disabled={!selectedOption || submitting || phase === "LOCKED"}
-          onClick={handleConfirmAnswer}
-          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-black font-extrabold text-sm tracking-wide shadow-lg shadow-amber-500/20 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 group"
-        >
-          {submitting ? "Locking In..." : "Confirm & Proceed"}
-          <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
-        </button>
+        {phase === "REVEALED" ? (
+          <button
+            type="button"
+            onClick={handleProceedToNext}
+            disabled={submitting}
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-extrabold text-sm tracking-wide shadow-lg shadow-emerald-500/20 transition-all flex items-center gap-2 group"
+          >
+            {submitting ? "Finalizing..." : revealResult?.is_last ? "View Championship Scorecard" : "Next Challenge"}
+            <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        ) : (
+          <button
+            type="button"
+            disabled={!selectedOption || submitting || phase === "LOCKED"}
+            onClick={handleConfirmAnswer}
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-black font-extrabold text-sm tracking-wide shadow-lg shadow-amber-500/20 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 group"
+          >
+            {submitting ? "Checking..." : "Confirm & Proceed"}
+            <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        )}
       </div>
     </div>
   );

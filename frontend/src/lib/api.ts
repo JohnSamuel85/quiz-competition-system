@@ -50,6 +50,10 @@ export interface SubmitAnswerResponse {
   question_id: number;
   saved: boolean;
   is_last_question: boolean;
+  correct_answer?: string;
+  is_correct?: boolean;
+  explanation?: string;
+  bible_reference?: string | null;
 }
 
 export interface QuestionReviewItem {
