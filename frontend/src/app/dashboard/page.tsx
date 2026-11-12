@@ -7,21 +7,19 @@ import { useAuth } from "../../lib/auth-context";
 import { fetchWithAuth, RoundSummary, UserStatsResponse } from "../../lib/api";
 import {
   TrophyIcon,
-  TimerIcon,
   BrainIcon,
   BookOpenIcon,
   CheckCircleIcon,
   ArrowRightIcon,
   BarChartIcon,
   PlayIcon,
-  SparklesIcon,
 } from "../../components/Icons";
 
 export default function DashboardPage() {
   const router = useRouter();
   const { user, isLoading } = useAuth();
 
-  const [dailyRound, setDailyRound] = useState<RoundSummary | null>(null);
+  const [allRounds, setAllRounds] = useState<RoundSummary[]>([]);
   const [stats, setStats] = useState<UserStatsResponse | null>(null);
   const [loadingData, setLoadingData] = useState(true);
 
@@ -33,11 +31,11 @@ export default function DashboardPage() {
 
     if (user) {
       Promise.all([
-        fetchWithAuth("/api/rounds/daily").catch(() => null),
+        fetchWithAuth("/api/rounds").catch(() => []),
         fetchWithAuth("/api/auth/stats").catch(() => null),
       ])
-        .then(([roundData, statsData]) => {
-          if (roundData) setDailyRound(roundData);
+        .then(([roundsData, statsData]) => {
+          if (Array.isArray(roundsData)) setAllRounds(roundsData);
           if (statsData) setStats(statsData);
         })
         .finally(() => {
@@ -51,7 +49,7 @@ export default function DashboardPage() {
       <div className="flex-1 flex items-center justify-center p-8 text-gray-400">
         <div className="flex flex-col items-center gap-3">
           <div className="w-10 h-10 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm">Loading participant statistics...</p>
+          <p className="text-sm">Loading participant dossier...</p>
         </div>
       </div>
     );
@@ -73,84 +71,111 @@ export default function DashboardPage() {
             Greetings, {user?.full_name}
           </h1>
           <p className="text-sm text-gray-400 mt-0.5">
-            Track your performance, review daily scorecards, and enter today's master round.
+            Select a competition round below, review scorecards, and track your metrics.
           </p>
         </div>
-
-        {dailyRound && !dailyRound.user_attempted_today && (
-          <Link
-            href={`/quiz/${dailyRound.id}`}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-black font-bold text-sm shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2 shrink-0 group"
-          >
-            <PlayIcon size={18} />
-            Enter Today's Arena
-            <ArrowRightIcon size={15} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        )}
       </div>
 
-      {/* Today's Competition Status Card */}
-      {dailyRound && (
-        <div
-          className={`p-6 rounded-2xl glass-card border mb-10 transition-all ${
-            dailyRound.user_attempted_today
-              ? "border-emerald-500/30 bg-emerald-950/10"
-              : "border-amber-500/30 bg-amber-950/10"
-          }`}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-start sm:items-center gap-4">
-              <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-                  dailyRound.user_attempted_today
-                    ? "bg-emerald-500/20 text-emerald-400"
-                    : "bg-amber-500/20 text-amber-400"
-                }`}
-              >
-                {dailyRound.user_attempted_today ? <CheckCircleIcon size={24} /> : <TrophyIcon size={24} />}
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded ${
-                      dailyRound.user_attempted_today
-                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30"
-                        : "bg-amber-500/10 text-amber-400 border border-amber-500/30"
-                    }`}
-                  >
-                    {dailyRound.user_attempted_today ? "Completed Today" : "Available Today"}
-                  </span>
-                  <span className="text-xs text-gray-400">Round #{dailyRound.round_number}</span>
-                </div>
-                <h3 className="text-lg font-bold text-white mt-1">{dailyRound.title}</h3>
-                <p className="text-xs text-gray-400 mt-0.5">
-                  50 Questions (25 Advanced Bible + 25 General Knowledge) • 20s per question
-                </p>
-              </div>
-            </div>
-
-            <div>
-              {dailyRound.user_attempted_today ? (
-                <Link
-                  href={`/scorecard/${dailyRound.latest_attempt_id}`}
-                  className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-wide transition-colors flex items-center gap-1.5"
-                >
-                  <CheckCircleIcon size={16} />
-                  Inspect Scorecard ({dailyRound.latest_score} Pts • {dailyRound.latest_accuracy}%)
-                </Link>
-              ) : (
-                <Link
-                  href={`/quiz/${dailyRound.id}`}
-                  className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs tracking-wide shadow-md shadow-amber-500/20 transition-all flex items-center gap-1.5"
-                >
-                  <PlayIcon size={16} />
-                  Start Round ({dailyRound.total_questions} Questions)
-                </Link>
-              )}
-            </div>
+      {/* CLEAR LIST OF ROUND 1, ROUND 2, AND ROUND 3 WHERE USER SELECTS TO PROCEED */}
+      <div className="mb-12">
+        <div className="flex items-center justify-between gap-4 mb-4">
+          <div>
+            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+              <TrophyIcon size={20} className="text-amber-400" />
+              Championship Rounds Selection
+            </h2>
+            <p className="text-xs text-gray-400 mt-0.5">
+              Select any round to proceed directly into its 50-question master challenge.
+            </p>
           </div>
+          <span className="text-xs font-mono font-bold text-amber-400 px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">
+            3 Rounds Available
+          </span>
         </div>
-      )}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {allRounds.map((round) => {
+            const isRound1 = round.round_number === 1;
+            const isRound2 = round.round_number === 2;
+
+            const borderClass = isRound1
+              ? "border-amber-500/30 hover:border-amber-400"
+              : isRound2
+              ? "border-indigo-500/30 hover:border-indigo-400"
+              : "border-teal-500/30 hover:border-teal-400";
+
+            const badgeClass = isRound1
+              ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
+              : isRound2
+              ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/30"
+              : "bg-teal-500/10 text-teal-400 border-teal-500/30";
+
+            return (
+              <div
+                key={round.id}
+                className={`p-6 rounded-3xl glass-card border flex flex-col justify-between transition-all duration-200 shadow-xl relative overflow-hidden group ${borderClass}`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className={`text-xs font-mono font-bold px-2.5 py-0.5 rounded-full border ${badgeClass}`}>
+                      Round #{round.round_number}
+                    </span>
+                    <span className="text-[11px] font-semibold text-gray-400 bg-[#0e1220] px-2 py-0.5 rounded border border-[#1f273d]">
+                      50 Questions
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
+                    {round.title}
+                  </h3>
+
+                  <p className="text-xs text-gray-400 mt-2 min-h-[40px] leading-relaxed">
+                    {round.description || "50 high-difficulty challenges: 25 Bible Knowledge + 25 General Knowledge."}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-2 my-4 text-center">
+                    <div className="p-2 rounded-xl bg-[#0b0e18] border border-[#1a2032]">
+                      <span className="text-[10px] text-amber-400 uppercase font-bold block">Scripture</span>
+                      <span className="text-xs font-bold text-white">25 Qs</span>
+                    </div>
+                    <div className="p-2 rounded-xl bg-[#0b0e18] border border-[#1a2032]">
+                      <span className="text-[10px] text-indigo-400 uppercase font-bold block">General</span>
+                      <span className="text-xs font-bold text-white">25 Qs</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#1e2538]">
+                  {round.user_attempted_today ? (
+                    <Link
+                      href={`/scorecard/${round.latest_attempt_id}`}
+                      className="w-full py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <CheckCircleIcon size={14} />
+                      View Scorecard ({round.latest_score} Pts)
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/quiz/${round.id}`}
+                      className={`w-full py-2.5 rounded-xl font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all ${
+                        isRound1
+                          ? "bg-amber-500 hover:bg-amber-400 text-black shadow-amber-500/20"
+                          : isRound2
+                          ? "bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-600/20"
+                          : "bg-teal-500 hover:bg-teal-400 text-black shadow-teal-500/20"
+                      }`}
+                    >
+                      <PlayIcon size={14} />
+                      Proceed to Round {round.round_number}
+                      <ArrowRightIcon size={14} />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Lifetime Performance Overview */}
       <div className="mb-10">
@@ -264,16 +289,8 @@ export default function DashboardPage() {
             <TrophyIcon size={36} className="mx-auto text-gray-600 mb-3" />
             <p className="text-base font-semibold text-white">No Championship Attempts Recorded Yet</p>
             <p className="text-xs text-gray-400 mt-1 max-w-md mx-auto">
-              Your historical scorecards, question-by-question reviews, and accuracy percentages will be archived here.
+              Choose any of the rounds above to begin competing.
             </p>
-            {dailyRound && (
-              <Link
-                href={`/quiz/${dailyRound.id}`}
-                className="mt-5 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs shadow-md transition-colors"
-              >
-                Launch Inaugural Round
-              </Link>
-            )}
           </div>
         )}
       </div>

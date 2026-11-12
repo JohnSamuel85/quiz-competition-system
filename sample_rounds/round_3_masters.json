@@ -1,0 +1,757 @@
+{
+  "round_number": 3,
+  "title": "Championship Round 3 - Biblical Mysteries & Intellectual Frontiers",
+  "description": "50 high-difficulty questions: 25 Bible Knowledge + 25 General Knowledge.",
+  "questions": [
+    {
+      "question_order": 1,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which king of Israel was killed by Zimri while recovering from wounds inflicted by the Syrians?",
+      "options": {
+        "A": "Elah",
+        "B": "Nadab",
+        "C": "Baasha",
+        "D": "Omri"
+      },
+      "correct_answer": "A",
+      "explanation": "Zimri conspired against Elah and killed him while he was drinking in the house of Arza, his palace steward.",
+      "bible_reference": "1 Kings 16:8-10"
+    },
+    {
+      "question_order": 2,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the father of Bezalel, the chief craftsman appointed to construct the Tabernacle?",
+      "options": {
+        "A": "Uri",
+        "B": "Hur",
+        "C": "Oholiab",
+        "D": "Caleb"
+      },
+      "correct_answer": "A",
+      "explanation": "Bezalel was the son of Uri, son of Hur, from the tribe of Judah.",
+      "bible_reference": "Exodus 31:2"
+    },
+    {
+      "question_order": 3,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet was instructed to purchase a linen waistband, hide it near the Euphrates, and later retrieve it ruined?",
+      "options": {
+        "A": "Isaiah",
+        "B": "Jeremiah",
+        "C": "Ezekiel",
+        "D": "Hosea"
+      },
+      "correct_answer": "B",
+      "explanation": "Jeremiah's ruined waistband symbolized Judah's pride and its loss of usefulness through disobedience.",
+      "bible_reference": "Jeremiah 13:1-11"
+    },
+    {
+      "question_order": 4,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who killed Sisera by driving a tent peg through his temple?",
+      "options": {
+        "A": "Deborah",
+        "B": "Jael",
+        "C": "Delilah",
+        "D": "Abigail"
+      },
+      "correct_answer": "B",
+      "explanation": "Jael struck Sisera while he was sleeping in her tent after he fled from Barak's army.",
+      "bible_reference": "Judges 4:17-22"
+    },
+    {
+      "question_order": 5,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which priest discovered the Book of the Law during the repairs of Solomon's Temple under King Josiah?",
+      "options": {
+        "A": "Zadok",
+        "B": "Hilkiah",
+        "C": "Abiathar",
+        "D": "Jehoiada"
+      },
+      "correct_answer": "B",
+      "explanation": "Hilkiah discovered the Book of the Law and handed it to Shaphan the scribe.",
+      "bible_reference": "2 Kings 22:8"
+    },
+    {
+      "question_order": 6,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which son of Gideon escaped the massacre of his brothers at Ophrah?",
+      "options": {
+        "A": "Jotham",
+        "B": "Abimelech",
+        "C": "Ibzan",
+        "D": "Tola"
+      },
+      "correct_answer": "A",
+      "explanation": "Jotham, the youngest son of Gideon, hid himself and survived Abimelech's massacre of his seventy brothers.",
+      "bible_reference": "Judges 9:5"
+    },
+    {
+      "question_order": 7,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet rebuked King Asa for relying on the king of Syria instead of relying on the Lord?",
+      "options": {
+        "A": "Hanani",
+        "B": "Jehu",
+        "C": "Micaiah",
+        "D": "Azariah"
+      },
+      "correct_answer": "A",
+      "explanation": "Hanani the seer confronted Asa and declared that his reliance on Syria rather than God was foolish.",
+      "bible_reference": "2 Chronicles 16:7-10"
+    },
+    {
+      "question_order": 8,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which man was appointed to oversee the rebuilding of Jerusalem's walls and served as governor?",
+      "options": {
+        "A": "Zerubbabel",
+        "B": "Nehemiah",
+        "C": "Ezra",
+        "D": "Mordecai"
+      },
+      "correct_answer": "B",
+      "explanation": "Nehemiah led the reconstruction of Jerusalem's walls and served as governor of Judah.",
+      "bible_reference": "Nehemiah 5:14-16"
+    },
+    {
+      "question_order": 9,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet saw a vision of a basket of summer fruit symbolizing the end of Israel's opportunity?",
+      "options": {
+        "A": "Joel",
+        "B": "Amos",
+        "C": "Micah",
+        "D": "Zechariah"
+      },
+      "correct_answer": "B",
+      "explanation": "The basket of summer fruit represented the ripeness of Israel for judgment.",
+      "bible_reference": "Amos 8:1-2"
+    },
+    {
+      "question_order": 10,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet was commanded to name his daughter Lo-Ruhamah?",
+      "options": {
+        "A": "Isaiah",
+        "B": "Hosea",
+        "C": "Jeremiah",
+        "D": "Ezekiel"
+      },
+      "correct_answer": "B",
+      "explanation": "Hosea's daughter Lo-Ruhamah symbolized that God would no longer show mercy to the house of Israel in the same manner.",
+      "bible_reference": "Hosea 1:6"
+    },
+    {
+      "question_order": 11,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the father of John the Baptist?",
+      "options": {
+        "A": "Simeon",
+        "B": "Zechariah",
+        "C": "Eli",
+        "D": "Joseph"
+      },
+      "correct_answer": "B",
+      "explanation": "Zechariah was a priest of the division of Abijah and the husband of Elizabeth.",
+      "bible_reference": "Luke 1:5-13"
+    },
+    {
+      "question_order": 12,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which disciple was also known as Didymus?",
+      "options": {
+        "A": "Andrew",
+        "B": "Thomas",
+        "C": "Bartholomew",
+        "D": "Philip"
+      },
+      "correct_answer": "B",
+      "explanation": "Thomas was called Didymus, a name meaning twin.",
+      "bible_reference": "John 11:16"
+    },
+    {
+      "question_order": 13,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the mother of King Lemuel, whose instructions are recorded in Proverbs 31?",
+      "options": {
+        "A": "Bathsheba",
+        "B": "An unnamed mother",
+        "C": "Abigail",
+        "D": "Esther"
+      },
+      "correct_answer": "B",
+      "explanation": "Proverbs identifies the speaker as the words of King Lemuel, taught to him by his mother, without naming her.",
+      "bible_reference": "Proverbs 31:1"
+    },
+    {
+      "question_order": 14,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet foretold that the Messiah would be born in Bethlehem Ephrathah?",
+      "options": {
+        "A": "Isaiah",
+        "B": "Micah",
+        "C": "Malachi",
+        "D": "Zephaniah"
+      },
+      "correct_answer": "B",
+      "explanation": "Micah prophesied that a ruler over Israel would come from Bethlehem Ephrathah.",
+      "bible_reference": "Micah 5:2"
+    },
+    {
+      "question_order": 15,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Roman governor succeeded Felix and heard Paul's defense alongside King Agrippa?",
+      "options": {
+        "A": "Pontius Pilate",
+        "B": "Porcius Festus",
+        "C": "Gallio",
+        "D": "Quirinius"
+      },
+      "correct_answer": "B",
+      "explanation": "Festus succeeded Felix as governor and heard Paul's defense before Agrippa and Bernice.",
+      "bible_reference": "Acts 25:1-12"
+    },
+    {
+      "question_order": 16,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who was the prophet that anointed Jehu as king of Israel through one of his disciples?",
+      "options": {
+        "A": "Elijah",
+        "B": "Elisha",
+        "C": "Micaiah",
+        "D": "Ahijah"
+      },
+      "correct_answer": "B",
+      "explanation": "Elisha sent a young prophet to Ramoth-gilead to anoint Jehu as king.",
+      "bible_reference": "2 Kings 9:1-6"
+    },
+    {
+      "question_order": 17,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which man was struck dead after touching the Ark of the Covenant to steady it?",
+      "options": {
+        "A": "Uzzah",
+        "B": "Ahio",
+        "C": "Obed-Edom",
+        "D": "Abinadab"
+      },
+      "correct_answer": "A",
+      "explanation": "Uzzah touched the Ark when the oxen stumbled, and the Lord struck him down for his irreverent act.",
+      "bible_reference": "2 Samuel 6:6-7"
+    },
+    {
+      "question_order": 18,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which woman became the first recorded Christian convert in Europe after Paul preached in Philippi?",
+      "options": {
+        "A": "Priscilla",
+        "B": "Lydia",
+        "C": "Damaris",
+        "D": "Phoebe"
+      },
+      "correct_answer": "B",
+      "explanation": "Lydia, a seller of purple goods from Thyatira, received Paul's message and was baptized with her household.",
+      "bible_reference": "Acts 16:13-15"
+    },
+    {
+      "question_order": 19,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which king of Judah was taken captive to Babylon with bronze chains and later released by Evil-Merodach?",
+      "options": {
+        "A": "Jehoiakim",
+        "B": "Jehoiachin",
+        "C": "Zedekiah",
+        "D": "Manasseh"
+      },
+      "correct_answer": "B",
+      "explanation": "Jehoiachin was released from prison by Evil-Merodach and given a place above other captive kings.",
+      "bible_reference": "2 Kings 25:27-30"
+    },
+    {
+      "question_order": 20,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who interpreted Pharaoh's dreams of seven healthy cows and seven thin cows?",
+      "options": {
+        "A": "Daniel",
+        "B": "Joseph",
+        "C": "Moses",
+        "D": "Aaron"
+      },
+      "correct_answer": "B",
+      "explanation": "Joseph interpreted the dreams as seven years of abundance followed by seven years of severe famine.",
+      "bible_reference": "Genesis 41:25-32"
+    },
+    {
+      "question_order": 21,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet was told to purchase a field at Anathoth while Jerusalem was under Babylonian siege?",
+      "options": {
+        "A": "Ezekiel",
+        "B": "Jeremiah",
+        "C": "Isaiah",
+        "D": "Daniel"
+      },
+      "correct_answer": "B",
+      "explanation": "Jeremiah purchased his cousin Hanamel's field as a prophetic sign that land and houses would again be possessed in Judah.",
+      "bible_reference": "Jeremiah 32:6-15"
+    },
+    {
+      "question_order": 22,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which apostle was chosen by the church in Jerusalem to accompany Paul and Barnabas to Antioch with the council's decision?",
+      "options": {
+        "A": "Silas",
+        "B": "Timothy",
+        "C": "Titus",
+        "D": "Apollos"
+      },
+      "correct_answer": "A",
+      "explanation": "Judas called Barsabbas and Silas were chosen as leading men to accompany Paul and Barnabas.",
+      "bible_reference": "Acts 15:22-27"
+    },
+    {
+      "question_order": 23,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which Old Testament king was instructed by Isaiah to apply a cake of figs to his boil?",
+      "options": {
+        "A": "Josiah",
+        "B": "Hezekiah",
+        "C": "Uzziah",
+        "D": "Ahaz"
+      },
+      "correct_answer": "B",
+      "explanation": "Isaiah instructed that a lump of figs be applied to Hezekiah's boil, after which he recovered.",
+      "bible_reference": "2 Kings 20:1-7"
+    },
+    {
+      "question_order": 24,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which man was appointed by Moses to lead Israel after him?",
+      "options": {
+        "A": "Caleb",
+        "B": "Eleazar",
+        "C": "Joshua",
+        "D": "Phinehas"
+      },
+      "correct_answer": "C",
+      "explanation": "God instructed Moses to commission Joshua son of Nun as Israel's next leader.",
+      "bible_reference": "Numbers 27:18-23"
+    },
+    {
+      "question_order": 25,
+      "category": "Bible Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which prophet saw four chariots emerge from between two mountains of bronze?",
+      "options": {
+        "A": "Daniel",
+        "B": "Zechariah",
+        "C": "Ezekiel",
+        "D": "Habakkuk"
+      },
+      "correct_answer": "B",
+      "explanation": "Zechariah's eighth vision describes four chariots representing heavenly spirits going throughout the earth.",
+      "bible_reference": "Zechariah 6:1-8"
+    },
+    {
+      "question_order": 26,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which phenomenon explains why a rotating black hole can transfer rotational energy to particles passing through its ergosphere?",
+      "options": {
+        "A": "Hawking radiation",
+        "B": "Penrose process",
+        "C": "Unruh effect",
+        "D": "Casimir effect"
+      },
+      "correct_answer": "B",
+      "explanation": "The Penrose process allows energy extraction from a rotating black hole through particle interactions within its ergosphere.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 27,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which physicist formulated the equation describing the wave function of a quantum system?",
+      "options": {
+        "A": "Paul Dirac",
+        "B": "Erwin Schrödinger",
+        "C": "Niels Bohr",
+        "D": "Max Planck"
+      },
+      "correct_answer": "B",
+      "explanation": "Schrödinger developed the wave equation that describes how the quantum state of a system evolves.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 28,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which ancient Greek mathematician is credited with proving that there are infinitely many prime numbers?",
+      "options": {
+        "A": "Pythagoras",
+        "B": "Euclid",
+        "C": "Archimedes",
+        "D": "Eratosthenes"
+      },
+      "correct_answer": "B",
+      "explanation": "Euclid's Elements contains a famous proof that the set of prime numbers is infinite.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 29,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which battle in 1066 resulted in the Norman conquest of England?",
+      "options": {
+        "A": "Battle of Stamford Bridge",
+        "B": "Battle of Hastings",
+        "C": "Battle of Agincourt",
+        "D": "Battle of Bosworth Field"
+      },
+      "correct_answer": "B",
+      "explanation": "William, Duke of Normandy, defeated King Harold II at Hastings and subsequently established Norman rule in England.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 30,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which philosopher introduced the concept of the categorical imperative as a foundation of moral philosophy?",
+      "options": {
+        "A": "John Locke",
+        "B": "Immanuel Kant",
+        "C": "Jeremy Bentham",
+        "D": "David Hume"
+      },
+      "correct_answer": "B",
+      "explanation": "Kant's categorical imperative establishes unconditional moral principles that apply universally to rational agents.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 31,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the name of the boundary separating Earth's crust from the mantle?",
+      "options": {
+        "A": "Gutenberg discontinuity",
+        "B": "Mohorovičić discontinuity",
+        "C": "Lehmann discontinuity",
+        "D": "Conrad discontinuity"
+      },
+      "correct_answer": "B",
+      "explanation": "The Mohorovičić discontinuity, or Moho, marks the seismic boundary between Earth's crust and mantle.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 32,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which empire was ruled by Ashurbanipal, known for establishing a major royal library at Nineveh?",
+      "options": {
+        "A": "Neo-Babylonian Empire",
+        "B": "Neo-Assyrian Empire",
+        "C": "Achaemenid Empire",
+        "D": "Hittite Empire"
+      },
+      "correct_answer": "B",
+      "explanation": "Ashurbanipal ruled the Neo-Assyrian Empire and assembled a vast collection of cuneiform tablets at Nineveh.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 33,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which literary work by Dante Alighieri describes a journey through Hell, Purgatory, and Paradise?",
+      "options": {
+        "A": "The Decameron",
+        "B": "The Divine Comedy",
+        "C": "Orlando Furioso",
+        "D": "The Aeneid"
+      },
+      "correct_answer": "B",
+      "explanation": "The Divine Comedy is Dante's epic poem describing his allegorical journey through the three realms of the afterlife.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 34,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which scientist discovered the neutron in 1932?",
+      "options": {
+        "A": "Ernest Rutherford",
+        "B": "James Chadwick",
+        "C": "J. J. Thomson",
+        "D": "Enrico Fermi"
+      },
+      "correct_answer": "B",
+      "explanation": "James Chadwick demonstrated the existence of the neutron through experiments involving beryllium radiation.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 35,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which economist wrote The General Theory of Employment, Interest and Money?",
+      "options": {
+        "A": "Adam Smith",
+        "B": "John Maynard Keynes",
+        "C": "Friedrich Hayek",
+        "D": "Joseph Schumpeter"
+      },
+      "correct_answer": "B",
+      "explanation": "Keynes published The General Theory in 1936, profoundly influencing modern macroeconomic thought.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 36,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which astronomical object is defined as a stellar remnant supported primarily by neutron degeneracy pressure?",
+      "options": {
+        "A": "White dwarf",
+        "B": "Neutron star",
+        "C": "Brown dwarf",
+        "D": "Red giant"
+      },
+      "correct_answer": "B",
+      "explanation": "A neutron star is an extremely dense remnant of a massive star, supported against gravity mainly by neutron degeneracy pressure and nuclear interactions.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 37,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which civilization developed the earliest known extensive system of writing in Mesoamerica, often associated with the earliest monumental inscriptions in the region?",
+      "options": {
+        "A": "Aztec",
+        "B": "Olmec",
+        "C": "Inca",
+        "D": "Moche"
+      },
+      "correct_answer": "B",
+      "explanation": "The Olmec civilization is associated with some of the earliest evidence of writing and complex symbolic inscription in Mesoamerica, although the origins and attribution remain debated.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 38,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which mathematical theorem states that every non-constant polynomial with complex coefficients has at least one complex root?",
+      "options": {
+        "A": "Fundamental theorem of arithmetic",
+        "B": "Fundamental theorem of algebra",
+        "C": "Intermediate value theorem",
+        "D": "Cauchy integral theorem"
+      },
+      "correct_answer": "B",
+      "explanation": "The fundamental theorem of algebra guarantees that a degree-n polynomial over the complex numbers has exactly n roots when multiplicity is counted.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 39,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which treaty established the European Economic Community in 1957?",
+      "options": {
+        "A": "Treaty of Maastricht",
+        "B": "Treaty of Rome",
+        "C": "Treaty of Lisbon",
+        "D": "Treaty of Amsterdam"
+      },
+      "correct_answer": "B",
+      "explanation": "The Treaty of Rome established the European Economic Community and Euratom in 1957.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 40,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which molecule acts as the primary electron donor in oxygenic photosynthesis?",
+      "options": {
+        "A": "Carbon dioxide",
+        "B": "Water",
+        "C": "Glucose",
+        "D": "NADPH"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is oxidized at photosystem II, releasing electrons, protons, and molecular oxygen during oxygenic photosynthesis.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 41,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Who wrote the philosophical work Leviathan, which examines the origins and justification of political authority?",
+      "options": {
+        "A": "John Locke",
+        "B": "Thomas Hobbes",
+        "C": "Jean-Jacques Rousseau",
+        "D": "Montesquieu"
+      },
+      "correct_answer": "B",
+      "explanation": "Thomas Hobbes published Leviathan in 1651, arguing for a powerful sovereign authority to prevent social conflict.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 42,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which scientist formulated the laws of electromagnetic induction and contributed to the development of the electric generator?",
+      "options": {
+        "A": "Michael Faraday",
+        "B": "André-Marie Ampère",
+        "C": "James Clerk Maxwell",
+        "D": "Heinrich Hertz"
+      },
+      "correct_answer": "A",
+      "explanation": "Faraday discovered electromagnetic induction in 1831, establishing the principle behind electric generators and transformers.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 43,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which ancient historian wrote The Histories, a major account of the Greco-Persian Wars?",
+      "options": {
+        "A": "Thucydides",
+        "B": "Herodotus",
+        "C": "Plutarch",
+        "D": "Livy"
+      },
+      "correct_answer": "B",
+      "explanation": "Herodotus is traditionally called the Father of History for his extensive account of the Greco-Persian conflicts and related peoples.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 44,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which particle is responsible for mediating the electromagnetic interaction?",
+      "options": {
+        "A": "Gluon",
+        "B": "Photon",
+        "C": "Graviton",
+        "D": "Z boson"
+      },
+      "correct_answer": "B",
+      "explanation": "The photon is the gauge boson of the electromagnetic interaction.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 45,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which empire's ruler, Mansa Musa, made a famous pilgrimage to Mecca in 1324?",
+      "options": {
+        "A": "Songhai Empire",
+        "B": "Mali Empire",
+        "C": "Ghana Empire",
+        "D": "Kanem-Bornu Empire"
+      },
+      "correct_answer": "B",
+      "explanation": "Mansa Musa's pilgrimage demonstrated the wealth and influence of the Mali Empire across trans-Saharan trade networks.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 46,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "What is the name of the mathematical structure used in general relativity to describe the curvature of spacetime?",
+      "options": {
+        "A": "Euclidean metric",
+        "B": "Lorentzian metric",
+        "C": "Hermitian matrix",
+        "D": "Symplectic form"
+      },
+      "correct_answer": "B",
+      "explanation": "A Lorentzian metric defines spacetime intervals and allows general relativity to describe gravitational geometry.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 47,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which novel by Mary Shelley is widely regarded as an early foundational work of science fiction?",
+      "options": {
+        "A": "Dracula",
+        "B": "Frankenstein",
+        "C": "The Time Machine",
+        "D": "The Invisible Man"
+      },
+      "correct_answer": "B",
+      "explanation": "Mary Shelley's Frankenstein, published in 1818, explores scientific ambition, responsibility, and the consequences of creating life.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 48,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which principle in thermodynamics states that the entropy of an isolated system never decreases?",
+      "options": {
+        "A": "Zeroth law",
+        "B": "First law",
+        "C": "Second law",
+        "D": "Third law"
+      },
+      "correct_answer": "C",
+      "explanation": "The second law states that the total entropy of an isolated system remains constant for reversible processes and increases for irreversible processes.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 49,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which civilization constructed the city of Machu Picchu in the Andes?",
+      "options": {
+        "A": "Maya",
+        "B": "Inca",
+        "C": "Aztec",
+        "D": "Olmec"
+      },
+      "correct_answer": "B",
+      "explanation": "Machu Picchu was built by the Inca civilization in the fifteenth century in the Andes of present-day Peru.",
+      "bible_reference": null
+    },
+    {
+      "question_order": 50,
+      "category": "General Knowledge",
+      "difficulty": "Advanced",
+      "question_text": "Which scientist proposed the theory of continental drift in the early twentieth century?",
+      "options": {
+        "A": "Charles Lyell",
+        "B": "Alfred Wegener",
+        "C": "Harry Hess",
+        "D": "James Hutton"
+      },
+      "correct_answer": "B",
+      "explanation": "Alfred Wegener proposed continental drift in 1912, arguing that continents had once formed a larger landmass called Pangaea.",
+      "bible_reference": null
+    }
+  ]
+}

@@ -772,11 +772,13 @@ SEED_ROUND_1 = {
 
 
 def seed_database_if_empty(db):
+    import json
+    import os
     from . import models, security
 
-    # Seed default championship round if none exists
-    round_count = db.query(models.Round).count()
-    if round_count == 0:
+    # Seed default championship round 1 if none exists
+    r1 = db.query(models.Round).filter(models.Round.round_number == 1).first()
+    if not r1:
         round_1 = models.Round(
             round_number=SEED_ROUND_1["round_number"],
             title=SEED_ROUND_1["title"],
@@ -804,8 +806,76 @@ def seed_database_if_empty(db):
                 bible_reference=q.get("bible_reference")
             )
             db.add(db_q)
+        db.commit()
 
-        # Seed initial admin user and demo participant
+    # Seed Round 2 from JSON if not exists
+    r2 = db.query(models.Round).filter(models.Round.round_number == 2).first()
+    r2_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "sample_rounds", "round_2_masters.json")
+    if not r2 and os.path.exists(r2_path):
+        with open(r2_path, "r", encoding="utf-8") as f:
+            d2 = json.load(f)
+        round_2 = models.Round(
+            round_number=d2["round_number"],
+            title=d2["title"],
+            description=d2.get("description", ""),
+            total_questions=len(d2["questions"]),
+            is_active=True
+        )
+        db.add(round_2)
+        db.flush()
+        for idx, q in enumerate(d2["questions"], start=1):
+            opts = q["options"]
+            db.add(models.Question(
+                round_id=round_2.id,
+                question_order=idx,
+                category=q["category"],
+                difficulty=q.get("difficulty", "Advanced"),
+                question_text=q["question_text"],
+                option_a=opts["A"],
+                option_b=opts["B"],
+                option_c=opts["C"],
+                option_d=opts["D"],
+                correct_answer=q["correct_answer"],
+                explanation=q["explanation"],
+                bible_reference=q.get("bible_reference")
+            ))
+        db.commit()
+
+    # Seed Round 3 from JSON if not exists
+    r3 = db.query(models.Round).filter(models.Round.round_number == 3).first()
+    r3_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "sample_rounds", "round_3_masters.json")
+    if not r3 and os.path.exists(r3_path):
+        with open(r3_path, "r", encoding="utf-8") as f:
+            d3 = json.load(f)
+        round_3 = models.Round(
+            round_number=d3["round_number"],
+            title=d3["title"],
+            description=d3.get("description", ""),
+            total_questions=len(d3["questions"]),
+            is_active=True
+        )
+        db.add(round_3)
+        db.flush()
+        for idx, q in enumerate(d3["questions"], start=1):
+            opts = q["options"]
+            db.add(models.Question(
+                round_id=round_3.id,
+                question_order=idx,
+                category=q["category"],
+                difficulty=q.get("difficulty", "Advanced"),
+                question_text=q["question_text"],
+                option_a=opts["A"],
+                option_b=opts["B"],
+                option_c=opts["C"],
+                option_d=opts["D"],
+                correct_answer=q["correct_answer"],
+                explanation=q["explanation"],
+                bible_reference=q.get("bible_reference")
+            ))
+        db.commit()
+
+    # Ensure admin user and demo participant exist
+    if db.query(models.User).count() == 0:
         admin_user = models.User(
             username="admin",
             email="admin@aethelgard.com",
@@ -823,6 +893,5 @@ def seed_database_if_empty(db):
             is_admin=False
         )
         db.add(demo_user)
-
         db.commit()
-        print("Database seeded with Championship Round 1 (50 questions) & initial credentials.")
+    print("Database verified with Round 1, Round 2, Round 3 & initial credentials.")
