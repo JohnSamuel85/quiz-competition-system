@@ -22,7 +22,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const savedToken = localStorage.getItem("aethelgard_token");
+    const savedToken = localStorage.getItem("biblequiz_token");
     if (savedToken) {
       setToken(savedToken);
       fetchWithAuth("/api/auth/me", { headers: { Authorization: `Bearer ${savedToken}` } })
@@ -30,7 +30,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           setUser(userData);
         })
         .catch(() => {
-          localStorage.removeItem("aethelgard_token");
+          localStorage.removeItem("biblequiz_token");
           setToken(null);
           setUser(null);
         })
@@ -47,7 +47,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       method: "POST",
       body: JSON.stringify({ username_or_email: usernameOrEmail, password }),
     });
-    localStorage.setItem("aethelgard_token", res.access_token);
+    localStorage.setItem("biblequiz_token", res.access_token);
     setToken(res.access_token);
     setUser(res.user);
   };
@@ -57,7 +57,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       method: "POST",
       body: JSON.stringify({ username, email, password, full_name: fullName }),
     });
-    localStorage.setItem("aethelgard_token", res.access_token);
+    localStorage.setItem("biblequiz_token", res.access_token);
     setToken(res.access_token);
     setUser(res.user);
   };
@@ -69,7 +69,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = () => {
-    localStorage.removeItem("aethelgard_token");
+    localStorage.removeItem("biblequiz_token");
     setToken(null);
     setUser(null);
   };

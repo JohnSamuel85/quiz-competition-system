@@ -4,7 +4,7 @@ import { AuthProvider } from "../lib/auth-context";
 import { Navbar } from "../components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Aethelgard | Premium Competitive Quiz Arena",
+  title: "BIBLE QUIZ | Premium Competitive Quiz Arena",
   description: "Intellectually demanding 50-question master quiz competitions: 25 Advanced Bible Knowledge and 25 Advanced General Knowledge challenges with synchronized voice narration and 20-second timers.",
 };
 
@@ -22,7 +22,7 @@ export default function RootLayout({
           <footer className="border-t border-[#1a2030] py-6 text-center text-xs text-gray-500">
             <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-gray-300">Aethelgard Quiz Arena</span>
+                <span className="font-semibold text-gray-300">BIBLE QUIZ Arena</span>
                 <span>•</span>
                 <span>50-Question Daily Master Competitions</span>
               </div>

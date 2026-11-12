@@ -6,7 +6,7 @@ if raw_db_url.startswith("postgres://"):
     raw_db_url = raw_db_url.replace("postgres://", "postgresql://", 1)
 
 class Settings:
-    PROJECT_NAME: str = "Aethelgard Premium Competitive Quiz Platform"
+    PROJECT_NAME: str = "BIBLE QUIZ Premium Competitive Quiz Platform"
     DATABASE_URL: str = raw_db_url
     SECRET_KEY: str = os.getenv("SECRET_KEY", "super-secret-jwt-key-for-premium-quiz-platform-2026-xyz-change-me")
     ALGORITHM: str = "HS256"

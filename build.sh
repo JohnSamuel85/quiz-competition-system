@@ -3,7 +3,7 @@
 set -o errexit
 
 echo "=========================================="
-echo "  BUILDING UNIFIED AETHELGARD QUIZ SERVICE "
+echo "  BUILDING UNIFIED BIBLE QUIZ SERVICE "
 echo "=========================================="
 
 echo "[1/3] Installing Python backend dependencies..."

@@ -12,7 +12,7 @@ BACKEND_PORT = os.getenv("BACKEND_PORT", "8000")
 BACKEND_HOST = os.getenv("BACKEND_HOST", "127.0.0.1")
 
 print("=" * 65, flush=True)
-print("  AETHELGARD PREMIUM QUIZ PLATFORM - UNIFIED PRODUCTION RUNNER", flush=True)
+print("  BIBLE QUIZ PLATFORM - UNIFIED PRODUCTION RUNNER", flush=True)
 print("=" * 65, flush=True)
 print(f"[*] Public Service Port (Render/User) : {PUBLIC_PORT}", flush=True)
 print(f"[*] Internal FastAPI Backend Port     : {BACKEND_PORT}", flush=True)
@@ -73,7 +73,7 @@ while time.time() - start_time < 30:
         print("[!] ERROR: Backend process died prematurely.", flush=True)
         sys.exit(1)
     try:
-        req = urllib.request.Request(health_url, headers={"User-Agent": "AethelgardSupervisor/1.0"})
+        req = urllib.request.Request(health_url, headers={"User-Agent": "BibleQuizSupervisor/1.0"})
         with urllib.request.urlopen(req, timeout=1.5) as resp:
             if resp.getcode() == 200:
                 ready = True

@@ -121,7 +121,7 @@ export interface UserStatsResponse {
 }
 
 export async function fetchWithAuth(url: string, options: RequestInit = {}): Promise<any> {
-  const token = typeof window !== "undefined" ? localStorage.getItem("aethelgard_token") : null;
+  const token = typeof window !== "undefined" ? localStorage.getItem("biblequiz_token") : null;
   
   const headers = new Headers(options.headers || {});
   if (token && !headers.has("Authorization")) {
